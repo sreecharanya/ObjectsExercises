@@ -68,17 +68,34 @@ crewReports(crew[item])
 
 // Start an animal race!
 function  fitnessTest(crew){
-let i=0;
+let results=[];
   for(item in crew){
-    if(crew.steps===20){
-      console.log("***")
-      console.log(`${crew[item.name]} took ${i} turns to take 20 steps.` )
-    }else{
-      crew[item]=steps();
-      i++;
-    }
+   // console.log("####3")
+   // console.log(crew[item]);
+    let st=0;
+    let numOfMoves=0;
+    while(st<20)
+    {
+     // console.log("^^^^")
+      crew[item.steps]=steps();
+      let i=crew[item.steps]
+      //console.log("I",i)
+    st=st+i;
+    crew[item].steps=st
+    //console.log("st",st)
+       numOfMoves++;
+
   }
+  console.log("name",crew[item].name)
+   console.log(crew[item]);
+   results.push()
+let str =`${crew[item].name} took ${numOfMoves} turns to take 20 steps.`
+results.push(str)
+  }
+
+return results;
 }
+    
 
 
 console.log(fitnessTest(crew));
